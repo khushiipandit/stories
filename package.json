@@ -1,0 +1,30 @@
+{
+  "name": "stories",
+  "version": "1.0.0",
+  "description": "/src ├── /components │   ├── LandingPage.jsx │   ├── StoryDisplay.jsx │   └── LoadingSpinner.jsx ├── /assets │   ├── /images │   │   └── background-illustration.png │   ├── /styles │   │   └── main.css │   └── /fonts │       └── Gaegu.woff2 ├── App.jsx ├── index.js └── index.css",
+  "main": "index.js",
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khushiipandit/stories.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khushiipandit/stories/issues"
+  },
+  "homepage": "https://github.com/khushiipandit/stories#readme",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "vite": "^7.1.4"
+  }
+}
