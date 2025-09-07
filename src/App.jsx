@@ -1,16 +1,15 @@
 // src/App.jsx
 import React, { useState } from "react";
 import Hero from "./components/Hero.jsx";
-import "./App.css"; // ensure CSS is imported (index.jsx also imports but safe)
+import TaglineBar from "./components/TaglineBar.jsx";  // 🔥 new
+import "./App.css";
 
 export default function App() {
   const [storyText, setStoryText] = useState("");
-  const [pages, setPages] = useState([]); // later populated by API (images + text)
+  const [pages, setPages] = useState([]);
 
-  // Temporary mock generation (replace with real API calls)
   const handleGenerate = (sentence) => {
     setStoryText(`Once upon a time, ${sentence} — and a magical adventure unfurled.`);
-    // mock pages to show grid (replace with API images/text)
     setPages([
       { id: 1, title: "Page 1", excerpt: "The sky shimmered with quiet light...", img: "/placeholder-illustration-1.png" },
       { id: 2, title: "Page 2", excerpt: "A small friend appeared at dusk...", img: "/placeholder-illustration-2.png" },
@@ -25,8 +24,14 @@ export default function App() {
 
   return (
     <div className="app-root">
+      <TaglineBar />  {/* 🔥 thin black strip at the very top */}
       <div className="page-container">
-        <Hero onGenerate={handleGenerate} pages={pages} storyText={storyText} setStoryText={setStoryText} />
+        <Hero
+          onGenerate={handleGenerate}
+          pages={pages}
+          storyText={storyText}
+          setStoryText={setStoryText}
+        />
       </div>
     </div>
   );
