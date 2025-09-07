@@ -1,35 +1,32 @@
+// src/App.jsx
 import React, { useState } from "react";
-import Header from "./components/Header.jsx";
-import InputBook from "./components/InputBook.jsx";
-import StoryGrid from "./components/StoryGrid.jsx";
+import Hero from "./components/Hero.jsx";
+import "./App.css"; // ensure CSS is imported (index.jsx also imports but safe)
 
 export default function App() {
   const [storyText, setStoryText] = useState("");
   const [pages, setPages] = useState([]); // later populated by API (images + text)
 
-  // Temporary mock generation (replace with API calls)
+  // Temporary mock generation (replace with real API calls)
   const handleGenerate = (sentence) => {
     setStoryText(`Once upon a time, ${sentence} — and a magical adventure unfurled.`);
     // mock pages to show grid (replace with API images/text)
     setPages([
-      { id: 1, title: "Page 1", excerpt: "The sky shimmered...", img: "/placeholder-illustration-1.png" },
-      { id: 2, title: "Page 2", excerpt: "A small friend appeared...", img: "/placeholder-illustration-2.png" },
-      { id: 3, title: "Page 3", excerpt: "They walked into the woods...", img: "/placeholder-illustration-1.png" },
-      { id: 4, title: "Page 4", excerpt: "A surprise by the river...", img: "/placeholder-illustration-2.png" },
+      { id: 1, title: "Page 1", excerpt: "The sky shimmered with quiet light...", img: "/placeholder-illustration-1.png" },
+      { id: 2, title: "Page 2", excerpt: "A small friend appeared at dusk...", img: "/placeholder-illustration-2.png" },
+      { id: 3, title: "Page 3", excerpt: "They walked into the woods and found a secret...", img: "/placeholder-illustration-1.png" },
+      { id: 4, title: "Page 4", excerpt: "A surprise at the riverbank changed everything...", img: "/placeholder-illustration-2.png" },
+      { id: 5, title: "Page 5", excerpt: "The trees whispered names of the old guardians...", img: "/placeholder-illustration-1.png" },
+      { id: 6, title: "Page 6", excerpt: "Moonlight paved the path back home...", img: "/placeholder-illustration-2.png" },
+      { id: 7, title: "Page 7", excerpt: "An unexpected friend joined the adventure...", img: "/placeholder-illustration-1.png" },
+      { id: 8, title: "Page 8", excerpt: "The end? Or the beginning of something else...", img: "/placeholder-illustration-2.png" },
     ]);
   };
 
   return (
     <div className="app-root">
-      <div className="sky-bg" />
       <div className="page-container">
-        <Header />
-        <InputBook onGenerate={handleGenerate} />
-        <div className="result-note">
-          {storyText ? <p className="result-text">{storyText}</p> : <p className="hint">Type a sentence to create your story and illustrations</p>}
-        </div>
-
-        <StoryGrid pages={pages} />
+        <Hero onGenerate={handleGenerate} pages={pages} storyText={storyText} setStoryText={setStoryText} />
       </div>
     </div>
   );
