@@ -69,6 +69,7 @@ export default function Hero({ onGenerate, pages = [], storyText = "", setStoryT
     if (setStoryText) setStoryText(page.excerpt || "");
   };
 
+  
   return (
     <section className="hero-section" aria-label="Hero storybook">
       {/* Full screen video background */}
@@ -91,13 +92,18 @@ export default function Hero({ onGenerate, pages = [], storyText = "", setStoryT
         {/* Grid background */}
         <div className="grid"></div>
       </div>
-      
+
+      {/* Tagline */}
+      <div className="tagline">
+        <p className="tagline-text">
+          <span className="tagline-highlight">Turn your words</span> into <span className="tagline-highlight">illustrated worlds</span> ✨
+        </p>
+      </div>
+
       {/* Header */}
       <header className="header">
-        
         <div className="header-inner">
           <h1 className="site-title">📖 AI Story Generator</h1>
-          <p className="subtitle">Turn your words into illustrated worlds ✨</p>
         </div>
       </header>
 
