@@ -177,15 +177,6 @@ export default function Hero({ onGenerate, pages = [], storyText = "", setStoryT
         />
       )}
 
-      {/* Result area */}
-      <div className="result-note">
-        {storyText ? (
-          <p className="result-text">{storyText}</p>
-        ) : (
-          <p className="hint">Type a story idea to create your illustrated story</p>
-        )}
-      </div>
-
       {/* Export buttons */}
       {pages.length > 0 && (
         <div className="export-buttons">
