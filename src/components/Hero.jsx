@@ -103,7 +103,7 @@ export default function Hero({ onGenerate, pages = [], storyText = "", setStoryT
       {/* Header */}
       <header className="header">
         <div className="header-inner">
-          <h1 className="site-title">📖 AI Story Generator</h1>
+          <h1 className="site-title">STORY SPARK</h1>
         </div>
       </header>
 
